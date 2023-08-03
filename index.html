@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/styles.css">
+  <title>Cards - Home</title>
+</head>
+<body>
+  <h1>Card Registration</h1>
+  <form id="addCardForm">
+    <label for="type">Type:</label>
+    <select id="type" name="type" required>
+      <option value="Monster">Monster</option>
+      <option value="Spell">Spell</option>
+      <option value="Trap">Trap</option>
+    </select>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" required></textarea>
+    <label for="battlePoints">Battle Points:</label>
+    <input type="text" id="battlePoints" name="battlePoints" required>
+    <button type="submit">Save</button>
+  </form>
+  <hr>
+  <h2>All Cards</h2>
+  <div class="search">
+    <label for="searchTerm">Search:</label>
+    <input type="text" id="searchTerm" name="searchTerm">
+    <button id="searchButton">Search</button>
+  </div>
+  <div class="sort">
+    <label for="sortBy">Sort By:</label>
+    <select id="sortBy">
+      <option value="name">Name</option>
+      <option value="battlePoints">Battle Points</option>
+    </select>
+    <label for="sortOrder">Order:</label>
+    <select id="sortOrder">
+      <option value="asc">Ascending</option>
+      <option value="desc">Descending</option>
+    </select>
+    <label for="typeFilter">Filter by Type:</label>
+    <select id="typeFilter">
+      <option value="">All</option>
+      <option value="Monster">Monster</option>
+      <option value="Spell">Spell</option>
+      <option value="Trap">Trap</option>
+    </select>
+    <button type="button" id="filterButton">Filter</button>
+  </div>
+  <div class="card-container" id="cardList"></div>
+  <div id="pagination"></div>
+  <div id="editOverlay" class="overlay">
+    <div class="overlay-content">
+      <h3>Edit Card</h3>
+      <form id="editForm">
+        <input type="hidden" id="editCardId">
+        <label for="editType">Type:</label>
+        <select id="editType" name="type" required>
+          <option value="Monster">Monster</option>
+          <option value="Spell">Spell</option>
+          <option value="Trap">Trap</option>
+        </select>
+        <label for="editName">Name:</label>
+        <input type="text" id="editName" name="name" required>
+        <label for="editDescription">Description:</label>
+        <textarea id="editDescription" name="description" required></textarea>
+        <label for="editBattlePoints">Battle Points:</label>
+        <input type="text" id="editBattlePoints" name="battlePoints" required>
+        <button type="submit">Save Changes</button>
+      </form>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="/js/script.js"></script>
+</body>
+</html>
